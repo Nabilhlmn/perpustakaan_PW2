@@ -1,85 +1,124 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Perhitungan Diskon - Tugas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="card">
-    <div class="card-header">
-        <h5 class="card-title">Detail Pembelian</h5>
-    </div>
-    <div class="card-body">
-        <table class="table table-striped">
-            <tbody>
+    <div class="container mt-5">
+        <h1 class="mb-4">Sistem Perhitungan Diskon Bertingkat</h1>
+
+        <?php
+$nama_pembeli = "nabil hilman";
+$judul_buku = "php Advanced";
+$harga_satuan = 150000;
+$jumlah_beli = 4;
+$is_member = true; // true atau false
+
+// Hitung subtotal
+$subtotal = $harga_satuan * $jumlah_beli;
+
+// Tentukan persentase diskon berdasarkan jumlah
+if ($jumlah_beli >= 1 && $jumlah_beli <= 2) {
+    $persentase_diskon = 0;
+}
+elseif ($jumlah_beli >= 3 && $jumlah_beli <= 5) {
+    $persentase_diskon = 0.10;
+}
+elseif ($jumlah_beli >= 6 && $jumlah_beli <= 10) {
+    $persentase_diskon = 0.15;
+}
+else {
+    $persentase_diskon = 0.20;
+}
+
+// Hitung diskon
+$diskon = $subtotal * $persentase_diskon;
+
+// Total setelah diskon pertama
+$total_setelah_diskon1 = $subtotal - $diskon;
+
+// Hitung diskon member jika member
+$diskon_member = 0;
+if ($is_member) {
+    $diskon_member = $total_setelah_diskon1 * 0.05;
+}
+
+// Total setelah semua diskon
+$total_setelah_diskon = $total_setelah_diskon1 - $diskon_member;
+
+// Hitung PPN
+$ppn = $total_setelah_diskon * 0.11;
+
+// Total akhir
+$total_akhir = $total_setelah_diskon + $ppn;
+
+// Total penghematan
+$total_hemat = $diskon + $diskon_member;
+?>
+
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">Detail Pembelian</h5>
+            <table class="table">
+                <tbody>
                 <tr>
-                    <th>Nama Pembeli</th>
+                    <td>Nama Pembeli</td>
                     <td><?php echo $nama_pembeli; ?></td>
                 </tr>
                 <tr>
-                    <th>Judul Buku</th>
+                    <td>Judul Buku</td>
                     <td><?php echo $judul_buku; ?></td>
                 </tr>
                 <tr>
-                    <th>Harga Satuan</th>
+                    <td>Harga Satuan</td>
                     <td>Rp <?php echo number_format($harga_satuan, 0, ',', '.'); ?></td>
                 </tr>
                 <tr>
-                    <th>Jumlah Beli</th>
+                    <td>Jumlah</td>
                     <td><?php echo $jumlah_beli; ?> buku</td>
                 </tr>
                 <tr>
-                    <th>Status Member</th>
-                    <td><span class="badge bg-<?php echo $is_member ? 'success' : 'secondary'; ?>"><?php echo $is_member ? 'Member' : 'Non-Member'; ?></span></td>
+                    <td>Status Member</td>
+                    <td><?php echo $is_member ? 'Member' : 'Non-Member'; ?></td>
                 </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<div class="card mt-4">
-    <div class="card-header">
-        <h5 class="card-title">Rincian Perhitungan</h5>
-    </div>
-    <div class="card-body">
-        <table class="table">
-            <tbody>
                 <tr>
-                    <th>Subtotal</th>
+                    <td>Subtotal</td>
                     <td>Rp <?php echo number_format($subtotal, 0, ',', '.'); ?></td>
                 </tr>
                 <tr>
-                    <th>Diskon</th>
-                    <td>Rp <?php echo number_format($diskon, 0, ',', '.'); ?> <span class="badge bg-info"><?php echo $persentase_diskon; ?>%</span></td>
+                    <td>Diskon (<?php echo $persentase_diskon * 100; ?>%)</td>
+                    <td>Rp <?php echo number_format($diskon, 0, ',', '.'); ?></td>
                 </tr>
                 <?php if ($is_member): ?>
                 <tr>
-                    <th>Diskon Member</th>
-                    <td>Rp <?php echo number_format($diskon_member, 0, ',', '.'); ?> <span class="badge bg-success">5%</span></td>
+                    <td>Diskon Member (5%)</td>
+                    <td>Rp <?php echo number_format($diskon_member, 0, ',', '.'); ?></td>
                 </tr>
-                <?php endif; ?>
+                <?php
+endif; ?>
                 <tr>
-                    <th>Total Setelah Diskon</th>
+                    <td>Total setelah diskon</td>
                     <td>Rp <?php echo number_format($total_setelah_diskon, 0, ',', '.'); ?></td>
                 </tr>
                 <tr>
-                    <th>PPN (11%)</th>
+                    <td>PPN (11%)</td>
                     <td>Rp <?php echo number_format($ppn, 0, ',', '.'); ?></td>
                 </tr>
-                <tr class="table-primary">
-                    <th>Total Akhir</th>
-                    <td><strong>Rp <?php echo number_format($total_akhir, 0, ',', '.'); ?></strong></td>
-                </tr>
-                <tr>
-                    <th>Total Penghematan</th>
-                    <td>Rp <?php echo number_format($total_hemat, 0, ',', '.'); ?></td>
-                </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+            <h5 class="mt-3">Total Akhir: <span class="badge bg-success">Rp <?php echo number_format($total_akhir, 0, ',', '.'); ?></span></h5>
+            <p>Total Hemat: <span class="badge bg-warning">Rp <?php echo number_format($total_hemat, 0, ',', '.'); ?></span></p>
+            </div>
+        </div>
+
     </div>
-</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
