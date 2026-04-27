@@ -68,6 +68,8 @@ Top 5 buku termahal
 Tugas 2
 
 ERD
+<img width="1060" height="430" alt="image" src="https://github.com/user-attachments/assets/6979701d-002e-4bc8-bded-a605c1c9b9c4" />
+
 
 A. Screenshot Struktur tabel
 
