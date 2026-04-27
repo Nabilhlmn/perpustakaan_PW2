@@ -1,3 +1,70 @@
+Tugas 1 
+
+1. Statistik Buku 5 Query
+   Total buku seluruhnya
+   <img width="1015" height="255" alt="image" src="https://github.com/user-attachments/assets/f2394b4b-df9f-4e6d-ad01-d2e02a066817" />
+   
+   Total nilai inventaris (sum harga × stok)
+   <img width="1015" height="295" alt="image" src="https://github.com/user-attachments/assets/97ae2b1a-b115-43a3-bae9-9d15b1a45088" />
+
+   Rata-rata harga buku
+   <img width="1015" height="301" alt="image" src="https://github.com/user-attachments/assets/66896d1a-8bba-4782-90b9-130f6a596e89" />
+
+   Buku termahal (tampilkan judul dan harga)
+   <img width="1015" height="301" alt="image" src="https://github.com/user-attachments/assets/1572889b-644c-469f-a06e-ffa7767cf675" />
+
+   Buku dengan stok terbanyak
+   <img width="1015" height="290" alt="image" src="https://github.com/user-attachments/assets/dfff3602-14ce-49a6-81ba-f433343e3767" />
+
+   
+3. Filter dan Pencarian (5 query):
+
+   Semua buku kategori Programming yang harga < 100.000
+   <img width="1015" height="290" alt="image" src="https://github.com/user-attachments/assets/45edac7b-c585-4b57-8fc9-cf1c9d1a44a6" />
+
+   Buku yang judulnya mengandung kata "PHP" atau "MySQL"
+   <img width="1015" height="291" alt="image" src="https://github.com/user-attachments/assets/142e9992-d982-42cd-950f-e2a977e772ac" />
+
+   Buku yang terbit tahun 2024
+   <img width="1015" height="377" alt="image" src="https://github.com/user-attachments/assets/c249cf4a-6d0c-4f75-98b8-5ba382b894f4" />
+
+   Buku yang stoknya antara 5-10
+   <img width="1015" height="377" alt="image" src="https://github.com/user-attachments/assets/f8c48c33-04d4-4a7b-b676-31494fc2ff8e" />
+
+   Buku yang pengarangnya "Budi Raharjo"
+<img width="1015" height="274" alt="image" src="https://github.com/user-attachments/assets/fa407ab9-a743-49d3-9361-2c17867e05aa" />
+
+   
+5. Grouping dan Agregasi (3 query):
+
+   Jumlah buku per kategori (dengan total stok per kategori)
+   <img width="1015" height="266" alt="image" src="https://github.com/user-attachments/assets/954e5d5d-b2ff-4485-8aa8-d0f6257ab758" />
+
+   Rata-rata harga per kategori
+   <img width="1015" height="266" alt="image" src="https://github.com/user-attachments/assets/7ae0b26a-f5a9-46fc-8039-975d334fba6b" />
+
+   Kategori dengan total nilai inventaris terbesar
+   <img width="1015" height="142" alt="image" src="https://github.com/user-attachments/assets/c3e24a19-f88d-453a-b44c-660624733817" />
+
+   
+Update Data (2 query):
+
+   Naikkan harga semua buku kategori Programming sebesar 5%
+   Tambah stok 10 untuk semua buku yang stoknya < 5
+   <img width="1015" height="142" alt="image" src="https://github.com/user-attachments/assets/d21a5064-5d18-439d-a8db-026bff6eab31" />
+
+Laporan Khusus (2 query):
+
+Daftar buku yang perlu restocking (stok < 5)
+<img width="1015" height="142" alt="image" src="https://github.com/user-attachments/assets/201a8cbd-b51c-48d9-848a-ab8f6a022885" />
+
+Top 5 buku termahal
+
+<img width="1015" height="384" alt="image" src="https://github.com/user-attachments/assets/7a39be76-748d-4418-8ed5-ab4716c03b2b" />
+
+
+
+
 Tugas 2
 
 ERD
